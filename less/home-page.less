@@ -1,29 +1,41 @@
 // Home Content
 
 .home {
-
   .intro {
-
     h2 {
       padding: 15px;
     }
 
     p {
-      padding:0 15px;
+      padding: 0 15px;
     }
-  
   }
+}
+.space-images {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 
-  .space-images {
-    display: flex;
-    flex-wrap: wrap;
+  img {
+    width: 28%;
+    margin: 20px 2.5%;
+    border-radius: 20px;
+    height: 100%;
+  }
+}
+
+.space-images .blast {
+  @media ((@phone) {
     width: 100%;
-
-    img {
-      width: 28%;
-      margin: 20px 2.5%;
-      border-radius: 20px;
-      height: 100%;
+    }}
+  .space-images .sky {
+    @media (@phone) {
+      display: none;
+    }}
+  
+  .space-images .launch {
+    @media (@phone) {
+      display: none;
     }
   }
 
@@ -31,7 +43,8 @@
     padding: 15px;
 
     h3 {
-      margin-top: 11px;
+      margin-top: 1.1rem;
+      margin-bottom: 1rem;
     }
 
     p {
@@ -46,30 +59,52 @@
     display: flex;
     justify-content: center;
 
-    .walk-text {
-      width: 50%;
+    
+     .adjust-display(column-reverse, center, center)
+     {width: 100%;};
+   
+  }
+  .walk { 
+    @media ((@phone) {
+       width: 100%;
+       display: flex;
+       
+       flex-direction: column-reverse;
+       
+     }}
 
-      h3 {
-        margin-bottom: 10px;
-      }
-
-      p {
-        margin-bottom: 26px;
-      }
-
-      .btn {
-      }
+  .walk-text {
+    width: 55%;
+  }
+    h3 {
+      margin-bottom: 1rem;
     }
 
+    p {
+      // font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      .custom-btn();
+      
+       width: 40%;
+       height: 15%;
+       }
+    .btn {
+      @media ((@phone) 
+      {width: 100%}
+}  
     .walk-img {
       width: 46%;
+      display: flex;
       margin-left: 4%;
       
       img {
-        width: 100%;
-        height: auto;
+       width: 100%;
+        height: 80%;
         border-radius: 10px;
       }
-    }
-  }
-}// home
+    
+  
+} // home
