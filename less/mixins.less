@@ -1,1 +1,26 @@
 // Mixins Here
+.adjust-display( @direct: column, @just: center, @align: center){
+    
+    flex-direction: @direct;
+    justify-content: @just;
+    align-items: @align;
+   
+} 
+
+.custom-btn( @bgColor:@btn-bg-color, @fontColor:@sea-shell,@width:10rem){
+     display: flex;   
+	background-color: @bgColor;
+	color: @fontColor;
+	 width: @width;
+	border-radius: .4rem;
+	height:3rem; 
+	font-size:2rem;
+    text-align: center;
+     .adjust-display();
+
+	&:hover{
+		background-color: @fontColor;
+		color: @bgColor; 
+		border: .2rem solid @ebony-clay;
+	}
+}      
