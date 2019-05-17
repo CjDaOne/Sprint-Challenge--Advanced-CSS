@@ -1,26 +1,44 @@
 // Mixins Here
-.adjust-display( @direct: column, @just: center, @align: center){
-    
-    flex-direction: @direct;
-    justify-content: @just;
-    align-items: @align;
-   
-} 
+.adjust-display( @direct: column, @just: center, @align: center) {
+  flex-direction: @direct;
+  justify-content: @just;
+  align-items: @align;
+}
 
-.custom-btn( @bgColor:@btn-bg-color, @fontColor:@sea-shell,@width:10rem){
-     display: flex;   
-	background-color: @bgColor;
-	color: @fontColor;
-	 width: @width;
-	border-radius: .4rem;
-	height:3rem; 
-	font-size:2rem;
-    text-align: center;
-     .adjust-display();
+.custom-btn( @bgColor: @btn-bg-color, @fontColor: @sea-shell, @width:11rem) {
+  display: flex;
+  background-color: @bgColor;
+  color: @fontColor;
+  width: @width;
+  border-radius: 0.4rem;
+  height: 3rem;
+  font-size: 2rem;
+  //   text-align: center;
+  .adjust-display();
 
-	&:hover{
-		background-color: @fontColor;
-		color: @bgColor; 
-		border: .2rem solid @ebony-clay;
-	}
-}      
+  &:hover {
+    background-color: @sea-shell;
+    color: @btn-bg-color;
+    border: 0.2rem solid @ebony-clay;
+    transition-duration: 0.75s;
+  }
+}
+.box-shadow(
+  @box-shadow-x: 1px, 
+  @box-shadow-y: 4px, 
+  @box-shadow-blur: 15px, 
+  @box-shadow-spread: 1px, 
+  @color: black) {
+  box-shadow: @box-shadow-x @box-shadow-y @box-shadow-blur @box-shadow-spread
+    @color;
+}
+.material-shadow(@spread: 10px) {
+  box-shadow: 0 3px @spread rgba(26, 26, 26, 0.3),
+    0 3px @spread rgba(138, 34, 43, 0.856);
+}
+.rotate {
+	transition: 1.33s; 
+    &:hover {
+	transform: rotate(360deg);
+  }
+}

@@ -1,10 +1,16 @@
-@media (max-width: 50rem) {
+@media ((max-width: 500px)) {
   display: none;
 }
-@media (max-width: 50rem) {
+@media ((max-width: 500px)) {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.rotate {
+  transition: 1.33s;
+}
+.rotate:hover {
+  transform: rotate(360deg);
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
@@ -143,7 +149,12 @@ html {
 html,
 body {
   font-family: 'Ubuntu', sans-serif;
-  color: #5E6164;
+  color: #5e6164;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
 }
 h1,
 h2,
@@ -151,7 +162,7 @@ h3,
 h4,
 h5 {
   font-family: 'Russo One', sans-serif;
-  color: #23293B;
+  color: #23293b;
 }
 h2 {
   font-size: 3.2rem;
@@ -163,14 +174,10 @@ p {
   font-size: 1.6rem;
   line-height: 1.4;
 }
-.container {
-  max-width: 800px;
-  width: 100%;
-  margin: 0 auto;
-}
 .nav-bar {
   font-size: 4rem;
   display: flex;
+  width: 100%;
   margin: 1rem 3rem;
   border: 1rem;
   flex-direction: column;
@@ -178,22 +185,29 @@ p {
   align-items: center;
 }
 .nav-bar h1 {
-  margin: 2rem;
+  margin: 1.5rem;
+}
+.nav-bar nav {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
 }
 .nav-bar a {
   text-decoration: none;
-  font-size: 2.5rem;
-  color: #22283A;
-  padding: 2rem;
+  font-size: 1.5rem;
+  color: #22283a;
+}
+.nav-bar a:hover {
+  background-color: #22283a;
+  color: #f1f1f1;
+  transition-duration: 0.75s;
 }
 @media (max-width: 500px) {
   .nav-bar {
     width: 100%;
   }
-  .nav-bar a {
-    font-size: 2rem;
-    padding: 0.6rem;
-    align-content: center;
+  .nav-bar nav {
+    font-size: 0.35rem;
   }
 }
 footer {
@@ -212,6 +226,11 @@ footer {
 .home .intro p {
   padding: 0 15px;
 }
+.art {
+  width: 96%;
+  margin: 0 2%;
+  box-shadow: 1px 4px 15px 1px black;
+}
 .space-images {
   display: flex;
   flex-wrap: wrap;
@@ -222,10 +241,19 @@ footer {
   margin: 20px 2.5%;
   border-radius: 20px;
   height: 100%;
+  box-shadow: 0 3px 20px rgba(26, 26, 26, 0.3), 0 3px 20px rgba(138, 34, 43, 0.856);
+  transition: 1.33s;
+}
+.space-images img:hover {
+  transform: rotate(360deg);
 }
 @media (max-width: 500px) {
   .space-images .blast {
     width: 100%;
+    transition: 1.33s;
+  }
+  .space-images .blast:hover {
+    transform: rotate(360deg);
   }
 }
 @media (max-width: 500px) {
@@ -258,42 +286,49 @@ footer {
 @media (max-width: 500px) {
   .walk {
     width: 100%;
-    display: flex;
     flex-direction: column-reverse;
   }
 }
 .walk-text {
   width: 55%;
 }
-h3 {
+@media (max-width: 500px) {
+  .walk-text {
+    width: unset;
+  }
+}
+.walk h3 {
   margin-bottom: 1rem;
+}
+@media (max-width: 500px) {
+  .walk h3 {
+    margin-top: 30px;
+  }
 }
 p {
   margin-bottom: 2.5rem;
 }
 .btn {
   display: flex;
-  background-color: #22283A;
-  color: #F1F1F1;
-  width: 10rem;
+  background-color: #22283a;
+  color: #f1f1f1;
+  width: 11rem;
   border-radius: 0.4rem;
   height: 3rem;
   font-size: 2rem;
-  text-align: center;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 40%;
-  height: 15%;
 }
 .btn:hover {
-  background-color: #F1F1F1;
-  color: #22283A;
-  border: 0.2rem solid #23293B;
+  background-color: #f1f1f1;
+  color: #22283a;
+  border: 0.2rem solid #23293b;
+  transition-duration: 0.75s;
 }
 @media (max-width: 500px) {
   .btn {
-    width: 100%;
+    width: unset;
   }
 }
 .walk-img {
@@ -302,7 +337,16 @@ p {
   margin-left: 4%;
 }
 .walk-img img {
-  width: 100%;
   height: 80%;
   border-radius: 10px;
+  box-shadow: 1px 4px 15px 1px blue;
+}
+@media ((max-width: 500px)) {
+  .walk-img img {
+    transition: 1.33s;
+    width: unset;
+  }
+  .walk-img img:hover {
+    transform: rotate(360deg);
+  }
 }
